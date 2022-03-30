@@ -16,10 +16,6 @@ profile: "normalize"
 # The `model-paths` config, for example, states that source models can be found
 # in the "models/" directory. You probably won't need to change these!
 model-paths: ["models"]
-docs-paths: ["docs"]
-analysis-paths: ["analysis"]
-test-paths: ["tests"]
-seed-paths: ["data"]
 macro-paths: ["macros"]
 
 target-path: "../build" # directory which will store compiled SQL files
@@ -57,6 +53,8 @@ models:
       airbyte_views:
         +tags: airbyte_internal_views
         +materialized: view
+
+require-dbt-version: [">=1.0.0", "<2.0.0"]
 
 dispatch:
   - macro_namespace: dbt_utils
